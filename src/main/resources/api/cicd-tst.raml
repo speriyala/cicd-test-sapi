@@ -1,0 +1,17 @@
+#%RAML 1.0
+title: "test-api"
+version: v1
+protocols:  [HTTP,HTTPS]
+mediaType: application/json
+
+/health:
+  get:
+    responses:
+      200:
+        body: 
+          type: object
+          example : 
+            {
+              "status" : "running" 
+             }
+        
