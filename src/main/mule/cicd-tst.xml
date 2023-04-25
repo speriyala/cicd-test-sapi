@@ -131,7 +131,8 @@ output application/json
 ---
 {
   status: "running",
-  timestamp: now()
+  timestamp: now(),
+  name: "shyam test"
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
