@@ -30,6 +30,29 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<!-- new code for cicd deployment  -->
+			<plugin>
+			  <groupId>org.mule.tools.maven</groupId>
+			  <artifactId>mule-maven-plugin</artifactId>
+			  <version>3.6.3</version>
+			  <extensions>true</extensions>
+			  <configuration>
+			    <cloudHubDeployment>
+			      <uri>https://anypoint.mulesoft.com</uri>
+			      <muleVersion>4.4.0</muleVersion>
+			      <username>speriyala2</username>
+			      <password>Psmohan@234</password>
+			      <applicationName>mule-app-cicd-sapi</applicationName>
+			      <environment>Sandbox</environment>
+			      <region>us-east-2</region>
+			      <workers>1</workers>
+			      <workerType>MICRO</workerType>
+			      <properties>
+			        <key>value</key>
+			      </properties>
+			    </cloudHubDeployment>
+			  </configuration>
+			</plugin>
 		</plugins>
 	</build>
 
