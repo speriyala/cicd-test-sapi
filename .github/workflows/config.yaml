@@ -40,5 +40,5 @@ jobs:
       - name: Package Mule project
         run: mvn clean package
 
-      -name : Deploy the code
-       run: mvn clean deploy
+      - name : Deploy the code
+        run: mvn clean deploy
