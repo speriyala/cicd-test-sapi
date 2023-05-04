@@ -42,8 +42,7 @@ jobs:
 
 
       - name: Shell script for API Mgr entry
-        run: sh token.sh 
-
+        run: sh token.sh
         
       - name : Deploy the code
         run: mvn -X clean deploy -DmuleDeploy
