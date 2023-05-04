@@ -38,10 +38,7 @@ jobs:
         run: mvn clean test
     
       - name: Package Mule project
-        run: mvn clean package
-
-      - name: Excute shell for API Mgr entry
-        run: sh token.sh        
+        run: mvn clean package  
 
       - name : Deploy the code
         run: mvn clean deploy -DmuleDeploy
