@@ -32,7 +32,7 @@ jobs:
           java-version: "11"
 
       - name: Clean Mule Project
-        run: mvn clean
+        run: mvn clean install
 
       - name: Run Munits
         run: mvn clean test
