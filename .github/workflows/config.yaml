@@ -5,10 +5,10 @@ name: Original flows
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "develop" ]
-  pull_request:
-    branches: [ "develop" ]
+  # push:
+  #   branches: [ "testnew" ]
+  # pull_request:
+  #   branches: [ "testnew" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -32,13 +32,17 @@ jobs:
           java-version: "11"
 
       - name: Clean Mule Project
-        run: mvn clean
+        run: mvn clean install
 
       - name: Run Munits
         run: mvn clean test
     
       - name: Package Mule project
-        run: mvn clean package
+        run: mvn clean package  
 
+
+      - name: Shell script for API Mgr entry
+        run: sh token.sh
+        
       - name : Deploy the code
-        run: mvn clean deploy -DmuleDeploy
+        run: mvn -X clean deploy -DmuleDeploy
