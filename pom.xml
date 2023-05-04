@@ -43,7 +43,7 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.4.0-20220824</muleVersion>
+						<muleVersion>4.4.0</muleVersion>
 						<username>speriyala3</username>
 						<password>Psmohan@234</password>
 						<applicationName>cicd-test-sapi</applicationName>
