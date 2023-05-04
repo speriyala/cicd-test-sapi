@@ -5,6 +5,9 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
     <apikit:config name="cicd-tst-config" api="cicd-tst.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+	<api-gateway:autodiscovery apiId="${api.id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="8bf67e72-74f7-4254-9be9-64b58f278af0" flowRef="cicd-tst-main" />
+	<configuration-properties doc:name="Configuration properties" doc:id="6efb28a5-c014-47cd-bac9-45c33e5611a4" file="config/${mule.env}.yaml" />
+	<global-property doc:name="Global Property" doc:id="fd8a77c7-c902-4c3b-8a3f-80e44cf1b0b4" name="mule.env" value="dev" />
 	<flow name="cicd-tst-main">
         <http:listener config-ref="cicd-tst-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
